@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
          val button = findViewById<Button>(R.id.button)
 
          button.setOnClickListener {
-         val editText1 = findViewById<EditText>(R.id.editTextTextPersonName).getText().toString()
-         val editText2 = findViewById<EditText>(R.id.editTextTextPersonName2).getText().toString()
+         val editText1 = findViewById<EditText>(R.id.editTextTextPersonName).text.toString()
+         val editText2 = findViewById<EditText>(R.id.editTextTextPersonName2).text.toString()
 
          val bundle = Bundle()
          bundle.putString("key1", editText1)
