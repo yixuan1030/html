@@ -1,0 +1,40 @@
+package com.example.myapplication
+
+import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.content.Intent
+import android.widget.Button
+import android.widget.EditText
+
+
+class MainActivity2 : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main2)
+
+        val button2 = findViewById<Button>(R.id.button2)
+
+        button2.setOnClickListener{
+            intent?.extras?.let {
+                val name = it.getString("key1")
+                val gender = it.getString("key2")
+                val size = findViewById<EditText>(R.id.editTextTextPersonName3).getText().toString()
+                val color = findViewById<EditText>(R.id.editTextTextPersonName4).getText().toString()
+
+                val bundle = Bundle()
+                bundle.putString("key1", name)
+                bundle.putString("key2", gender)
+                bundle.putString("key3",size)
+                bundle.putString("key4",color)
+
+                val intent = Intent().putExtras(bundle)
+                setResult(Activity.RESULT_OK, intent.putExtras(bundle))
+                finish()
+
+            }
+        }
+
+    }
+
+}
