@@ -19,8 +19,8 @@ class MainActivity2 : AppCompatActivity() {
             intent?.extras?.let {
                 val name = it.getString("key1")
                 val gender = it.getString("key2")
-                val size = findViewById<EditText>(R.id.editTextTextPersonName3).getText().toString()
-                val color = findViewById<EditText>(R.id.editTextTextPersonName4).getText().toString()
+                val size = findViewById<EditText>(R.id.editTextTextPersonName3).text.toString()
+                val color = findViewById<EditText>(R.id.editTextTextPersonName4).text.toString()
 
                 val bundle = Bundle()
                 bundle.putString("key1", name)
